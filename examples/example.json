@@ -1,0 +1,230 @@
+{
+	"contractInfo" : {
+		"version" : 0.1,
+		"lastModification" : "5 Juli 2015"
+	},
+	
+	
+	
+	
+	
+	"agreement" : {
+		"header": "Welcome to the example agreement",
+		"template" : 
+		[
+			{
+				"text" : "<p>Hello [yourName]! This is the example agreement that contains all the different variables that contract(&nbsp;) can handle. Before you start making your own agreements with contract(&nbsp;), be sure to check out the <a href=\"/custom/guide/index.html\">contract(&nbsp;) guide</a>. So, [yourName], if you are ready to give it a try, take a look at the JSON file called example.json to see how this contract is structured.</p><p>Important to note is that variables in this first 'agreement' section can be used throughout the entire agreement!</p>",
+				"variables": 
+				{
+					"yourName" : {
+						"label" : "A simple label you can fill in with your name", 
+						"placeholder" : "a placeholder for your name", 
+						"description" : "long description.",
+						"examples" : ["example name one", "example name two"]}
+				}
+			}
+		]
+	},
+	
+	
+	
+	
+	"multipleTemplates" : {
+		"header": "[#] A section with multiple templates",
+		"select" : 
+		{
+			"label" : "A selection with options looks like this",
+			"description" : "with a description of course",
+			"options": 
+			[
+				"Option without list",
+				"Option with list",
+				"Option with all variable kinds",
+				"Option with everything inside a label"
+			]
+		},
+		"template" : 
+		[
+			{
+				"text" : "<p>[#.#] This section has four options or four 'templates', to be selected by the user via a select variable. Notice that there are an equal amount of options in the select as there are templates! Right now, the first template is selected, which is why you are seeing this text.</p>", 
+				"variables": 
+				{
+					
+				}
+			},
+			{
+				"text" : "<p>[#.#] This template has a list that is connected to another list later in the contract. Therefore, it has an additional variable called 'refreshSectionID' that is filled with the ID of the section that contains the list it is connected to. This is required because the list that it is connected to needs to update when you edit this list.</p> [exampleList]",
+				"variables": 
+				{
+					"exampleList" : { 
+						"type" : "list", 
+						"list" : [],
+						"label" : "example list label", 
+						"placeholderItem" : "placeholder for item", 
+						"placeholderAdd" : "placeholder for add", 
+						"prefix" : "this is a prefix, ", 
+						"separator" : ", ", 
+						"description" : "description of list.",
+						"examples" : ["list example 1", "list example 2"]}
+				}
+			},
+			{
+				"text" : "<p>[#.#] This third option has all variable kinds: a label, a checkbox, and a list.</p><p>[#.#] This is what the label is filled with: [labelExample].</p><p>[#.#] This is what the checkbox is filled with: [checkboxExample].</p><p>[#.#] This is the list, just outside this HTML paragraph:</p> [anotherListExample]",
+				"variables": 
+				{
+					"labelExample" : {
+						"label" : "A simple label", 
+						"placeholder" : "label placeholder", 
+						"description" : "long description.",
+						"examples" : ["example one", "example two", "example three"]},
+					"checkboxExample" : { 
+						"type" : "checkbox", 
+						"label" : "a checkbox example", 
+						"isChecked" : false, 
+						"checked" : "checkbox checked text and another numbering thing: [#.#]", 
+						"unchecked" : "checkbox unchecked text", 
+						"description" : "this is the checkbox description"},
+					"anotherListExample" : { 
+						"type" : "list", 
+						"list" : [],
+						"label" : "a list example", 
+						"placeholderItem" : "placeholder for item", 
+						"placeholderAdd" : "placeholder for add", 
+						"prefix" : "this is the prefix ", 
+						"separator" : ", ", 
+						"description" : "description of list.",
+						"examples" : ["list example 1", "list example 2"]}
+				}
+			},
+			{ 
+				"text" : "<p>[#.#] [everythingInsideLabel]</p>", 
+				"variables" : 
+				{
+					"everythingInsideLabel" : { 
+						"type" : "checkbox", 
+						"label" : "Swap all stuff with checkboxes if you want", 
+						"isChecked" : false, 
+						"checked" : "Poof! There's something else here now!", 
+						"unchecked" : "All text in this section is included in the text of this checkbox, just to show you how 'wild' you can go.", 
+						"description" : "checkbox description?" }
+				}
+			}
+		]
+	},
+	
+	"multipleTemplatesAddition" : {
+		"template": 
+		[
+			{ 
+				"text" : "<p>[#.#] This section has no header, so it looks like it's part of the previous section, but it's not! This is useful for default clauses at the end of sections that are independent of the changable templates.</p>", 
+				"variables" : 
+				{
+					
+				}
+			}
+		]
+	},
+	
+	
+	
+	
+	
+	"exampleThree" : {
+		"header": "Playing with checkboxes",
+		"template": 
+		[
+			{ 
+				"text" : "<p>[#.#] The following text is only visible when the checkbox is enabled: [checkboxExample]</p><p>Additional labels can be shown or hidden inside and outside the checkbox-added text. [checkboxExampleTwo]</p><p>[#.#] Labels can show up depending on whether a checkbox is checked or unchecked: [checkboxExampleThree].</p><p>Text within checkboxes can also show nothing if checked or unchecked: [exampleNullCheck]</p>", 
+				
+				"variables" : 
+				{
+					"checkboxExample" : { 
+						"type" : "checkbox", 
+						"label" : "check to add text.", 
+						"isChecked" : false, 
+						"checked" : "see, the first checkbox was checked and now I'm here too!", 
+						"unchecked" : null, 
+						"description" : "checkbox one description?"},
+					"checkboxExampleTwo" : { 
+						"type" : "checkbox", 
+						"label" : "check to add two labels.", 
+						"isChecked" : false, 
+						"checked" : "You checked the second checkbox, so now this text with a label inside shows up: [insideCheckboxEnabled].", 
+						"unchecked" : null, 
+						"description" : "checkbox two description"},
+					"insideCheckboxEnabled" : { 
+						"onlyDisplayIfChecked" : "checkboxExampleTwo",
+						"label" : "label is only visible when above is checked", 
+						"placeholder" : "placeholder", 
+						"description" : "label description",
+						"examples" : ["label example"]},
+					"checkboxExampleThree" : { 
+						"type" : "checkbox", 
+						"label" : "uncheck to add a label", 
+						"isChecked" : true, 
+						"checked" : "checkbox three is checked and but has no tag", 
+						"unchecked" : "checkbox three is unchecked and has this tag: [exampleIfUnchecked]", 
+						"description" : "checkbox three description"},
+					"exampleIfUnchecked" : { 
+						"onlyDisplayIfUnchecked" : "checkboxExampleThree",
+						"label" : "only visible when unchecked", 
+						"placeholder" : "placeholder", 
+						"description" : "label description",
+						"examples" : ["example"]},
+					"exampleNullCheck" : { 
+						"type" : "checkbox", 
+						"label" : "check to remove text", 
+						"isChecked" : false, 
+						"checked" : null, 
+						"unchecked" : "unchecked", 
+						"description" : "checkbox four description"}
+				}
+			}
+		]
+	},
+	
+	
+	
+	
+	
+	"superAdvancedList" : {
+		"header": "[#] Super advanced section",
+		"template": 
+		[
+			{ 
+				"text" : "<p>This list matches the length of another list:</p>[listTakingListCountFromSomewhereElse]<p>[#.#] Another advanced technique is to tie multiple labels to checkboxes while outside of the text added by a checkbox. Example: Checkbox text = [checkboxForLabelOutside] and label outside this text =  [outsideCheckboxEnabled].</p>", 
+				"variables" : 
+				{
+					"listTakingListCountFromSomewhereElse" : { 
+						"type" : "list", 
+						"list" : [], 
+						"takeListLengthSectionID" : "multipleTemplates",
+						"takeListLengthTemplateID" : 1,
+						"takeListLengthVariableID" : "exampleList",
+						"takeListLengthWarning" : "Select the second option somewhere up here and add items!",
+						"label" : "this list takes its length from the list above", 
+						"placeholderItem" : "label placeholder item", 
+						"placeholderAdd" : "label placeholder add", 
+						"prefix" : "list prefix", 
+						"separator" : ": ", 
+						"description" : "list description.",
+						"examples" : ["list example 1", "list example 2"]},
+					"checkboxForLabelOutside" : { 
+						"type" : "checkbox", 
+						"label" : "check to show a completely separate label", 
+						"isChecked" : false, 
+						"checked" : "checked", 
+						"unchecked" : "unchecked", 
+						"description" : "checkbox description"},
+					"outsideCheckboxEnabled" : { 
+						"onlyDisplayIfChecked" : "checkboxForLabelOutside",
+						"label" : "this label is only visible when above is checked", 
+						"placeholder" : "placeholder", 
+						"description" : "label description",
+						"examples" : ["example"]}
+				}
+			}
+		]
+	}
+	
+}

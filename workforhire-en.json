@@ -1,0 +1,594 @@
+{
+	"contractInfo" : {
+		"language" : "en",
+		"version" : 1.13,
+		"basedOnEnglishVersion" : 1.13,
+		"lastModification" : "Dec. 11, 2018"
+	},
+	
+	
+	
+	
+	
+	"agreement" : {
+		"header": "Agreement",
+		"template" : 
+		[
+			{
+				"text" : "<p>This agreement is made by and between [companyLegal] (or \"[company]\" in short), based at [companyAddress], and [contractorLegal] (or \"[contractor]\" in short), based at [contractorAddress]. With this agreement, [contractor] agrees to perform services for [company] for the project tentatively titled '[projectName]' on the following terms and conditions.</p>",
+				"variables": 
+				{
+					"companyLegal" : {
+						"label" : "Your legal (company) name", 
+						"placeholder" : "Full Company Name LLC", 
+						"description" : "The name of your company as registered in your country.",
+						"examples" : ["Vlambeer vof", "Adriaan de Jongh LLC"]},
+						
+					"company" : {
+						"label" : "Your (company's) short name", 
+						"placeholder" : "Company", 
+						"description" : "The simplified name of your company to be used in this agreement to make it less difficult to read.",
+						"examples" : ["Vlambeer", "Adriaan"]},
+						
+					"companyAddress" : { 
+						"label" : "Your full (company) address", 
+						"placeholder" : "Vondelpark 5, 1071 AA, Amsterdam, the Netherlands", 
+						"description" : "The full address of the office of your company.",
+						"examples" : ["Vondelpark 5, 1071 AA, Amsterdam, the Netherlands", "747 Howard Street, San Francisco, CA 94103, United States"]},
+						
+					"contractorLegal" : { 
+						"label" : "Contractors' legal (company) name", 
+						"placeholder" : "Full contractor name", 
+						"description" : "The registered company name of the contractor.",
+						"examples" : ["John Freelancer", "TheCompany LLC"]},
+						
+					"contractor" : { 
+						"label" : "Contractors' (company) short name", 
+						"placeholder" : "Contractor", 
+						"description" : "The simplified name of the contractors' company to be used in this agreement to make it less difficult to read.",
+						"examples" : ["John", "TheCompany"]},
+						
+					"contractorAddress" : { 
+						"label" : "Contractors' full (company) address", 
+						"placeholder" : "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France", 
+						"description" : "The full address of the office of the contractors' company.",
+						"examples" : ["Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France", "10900 NE 4th street, #500 Bellevue, WA 98004, United States"]},
+						
+					"projectName" : { 
+						"label" : "Name of the project", 
+						"placeholder" : "Game", 
+						"description" : "The (work-in-progress) title of the game or project.",
+						"examples" : ["Hidden Folks", "Thirty Flights of Loving"]}
+				}
+			}
+		]
+	},
+	
+	
+	
+	
+	"scope" : {
+		"header": "Services and deadlines",
+		"select" : 
+		{
+			"label" : "How do you want to define the work and services?",
+			"description" : "It may be important to keep the list of services in this agreement broad enough so that edge cases are also included. However, if it is absolutely clear what [contractor] will be doing, you can still get as specific as you would like. In many cases, work and services are defined per milestone so that [contractor] can also get paid per milestone instead of once at the end or through a fixed fee.",
+			"options": 
+			[
+				"Project-based",
+				"Milestone-based"
+			]
+		},
+		"template" : 
+		[
+			{
+				"text" : "<p>The services that [contractor] will perform for [projectName] include:</p>[workToPerformList]<p>[company] needs to approve the work resulting from [contractor]'s services before it is considered complete. [company] will therefore try to continuously and clearly communicate what makes the work complete and will try to approve or disapprove the work resulting from the services as soon as possible. [contractor] is aware that minor adjustments and fixes to the work are also part of the services.</p><p>The deadline for [contractor] to complete the services is [workCompletedDate]. Together, [company] and [contractor] can agree to set a new deadline or redefine the services to be performed for the existing deadline. When [contractor] becomes aware that [contractor] is unable to complete the services on the deadline, [contractor] will immediately notify [company]. If [contractor] is unable to complete the services on the deadline and [company] and [contractor] cannot agree on a new deadline, [company] can decide to no longer use [contractor]’s services.</p>", 
+				"variables": 
+				{
+					"workToPerformList" : { 
+						"type" : "list", 
+						"list" : [], 
+						"label" : "List of work or services to be performed", 
+						"placeholderItem" : "Work or services", 
+						"placeholderAdd" : "Add work or services item...", 
+						"description" : "A general list of the work and services that [contractor] will perform.",
+						"examples" : ["Concept art", "Two promotional videos"]},
+						
+					"workCompletedDate" : {
+						"label" : "Date of work completed", 
+						"placeholder" : "the release of the game", 
+						"description" : "The date [contractor] will have completed all work and services for this agreement.",
+						"examples" : ["the release of the game", "November 15th, 2025"]}
+				}
+			},
+			{
+				"text" : "<p>The services that [contractor] will perform for [projectName] are divided by milestones:</p>[milestoneList]<p>[company] needs to approve the work resulting from the services for each milestone before the milestone is considered complete and payable. The deadlines for [contractor] to complete and submit each milestone for approval can be defined together with every milestone above. If deadlines are not specified with each milestone, [company] and [contractor] can agree on deadlines while [contractor] is performing the services. [contractor] is aware that minor adjustments and fixes to the work must also be completed before the deadline of each milestone.</p><p>When [contractor] becomes aware that [contractor] is unable to complete the milestone on the milestone's deadline, [contractor] will immediately notify [company]. Together, [company] and [contractor] can agree to set a new deadline to complete the milestone or redefine the services to be performed before the milestone's deadline. If [contractor] is unable to complete the services for a milestone before the milestone's deadline and [company] and [contractor] cannot agree on a new deadline for the milestone, [company] can decide to no longer use [contractor]’s services.</p>",
+				"variables": 
+				{
+					"milestoneList" : { 
+						"type" : "list", 
+						"list" : [],
+						"label" : "List of due dates + work to be performed", 
+						"placeholderItem" : "due [date]: [work]", 
+						"placeholderAdd" : "due [date]: [work]", 
+						"prefix" : "Milestone ", 
+						"separator" : ", ", 
+						"description" : "A list of the milestones specifying the work and services to be performed by [contractor] for each milestone, including the dates on which they have to be finished.",
+						"examples" : ["due Jan 3rd 2025: Concept art and rough interface sketches", "due Mar 23rd 2025: Concept art for all characters"]}
+				}
+			}
+		]
+	},
+	
+	"scope2" : {
+		"template": 
+		[
+			{ 
+				"text" : "<p>If [company] does not pay on time, [contractor] can delay deadlines with as many days as [company] delays the owed payment. If [company] wants [contractor] to perform services that are not listed above, [company] and [contractor] can agree to add services to this agreement or sign a new agreement.</p>", 
+				"variables" : 
+				{
+					
+				}
+			}
+		]
+	},
+	
+	
+	
+	
+	
+	"compensation" : {
+		"header": "Compensation",
+		"select" : 
+		{
+			"label" : "What kind of compensation will [contractor] receive?",
+			"description" : "To decide which kind of compensation fits your agreement, you need to consider the risk vs payoff for both parties. With a fixed fee, fixed rate, or payments per milestone, the risk is low for [contractor] (he or she will get paid, no matter the success of the game), high for [company] (it's a fixed cost, even if the game doesn’t do well), the payoff low for [contractor] (who won't make more money if the game becomes a success) and potentially high for [company] (if the game becomes a success, the costs of [contractor] will become marginal). With a percentage of gross income, the risks are high for [contractor] (if the game flops, he or she doesn't get paid), low for [company] (no expense unless money is made), the payoff potentially high for [contractor] (in case of success) but lower for [company] (makes less in the long term). Keep in mind that gross income is the money that [company] receives, not the price of the game to the consumer or the money that a potential publisher receives.",
+			"options": 
+			[
+				"A fixed fee",
+				"A fixed rate",
+				"A fee per milestone",
+				"A percentage of gross income"
+			]
+		},
+		"template": 
+		[
+			{ 
+				"text" : "<p>[receivePaymentOnSigning]After [company] has approved the work delivered by [contractor], [company] agrees to pay [contractor] [paymentAmount] on [paymentDate].</p>", 
+				"variables" : 
+				{
+					"receivePaymentOnSigning" : { 
+						"type" : "checkbox", 
+						"label" : "Include payment on signing.", 
+						"isChecked" : false, 
+						"checked" : "When [company] and [contractor] sign this agreement, [company] agrees to pay [contractor] [paymentOnSigning]. ", 
+						"unchecked" : null, 
+						"description" : "Will [contractor] receive a payment on signing this document?"},
+						
+					"paymentOnSigning" : { 
+						"onlyDisplayIfChecked" : "receivePaymentOnSigning",
+						"label" : "Payment on signing + currency", 
+						"placeholder" : "3,000 USD", 
+						"description" : "The amount of money [contractor] will receive on signing the agreement.",
+						"examples" : ["13,000 USD", "10.000 EUR"]},
+						
+					"paymentAmount" : { 
+						"label" : "Fee to be paid on payment date + currency", 
+						"placeholder" : "3,000 USD", 
+						"description" : "The amount of money [contractor] will receive on the payment date.",
+						"examples" : ["13,000 USD", "10.000 EUR"]},
+						
+					"paymentDate" : {
+						"label" : "Payment date", 
+						"placeholder" : "the release date of the game", 
+						"description" : "The date [contractor] will receive the payment.",
+						"examples" : ["the release date of the game", "November 15th, 2025"]}
+				}
+			},
+			{ 
+				"text" : "<p>[receivePaymentOnSigning][rateStyle]</p>", 
+				"variables" : 
+				{
+					"receivePaymentOnSigning" : { 
+						"type" : "checkbox", 
+						"label" : "Include payment on signing.", 
+						"isChecked" : false, 
+						"checked" : "When [company] and [contractor] sign this agreement, [company] agrees to pay [contractor] [paymentOnSigning]. ", 
+						"unchecked" : null, 
+						"description" : "Will [contractor] receive a payment on signing this document?" },
+						
+					"paymentOnSigning" : { 
+						"onlyDisplayIfChecked" : "receivePaymentOnSigning",
+						"label" : "Payment on signing + currency", 
+						"placeholder" : "3,000 USD", 
+						"description" : "The amount of money [contractor] will receive on signing the agreement.",
+						"examples" : ["13,000 USD", "10.000 EUR"]},
+						
+					"rateStyle" : { 
+						"type" : "checkbox", 
+						"label" : "[contractor] sends estimates.", 
+						"isChecked" : true, 
+						"checked" : "Before [contractor] performs any services, [contractor] will estimate the [rateFrequency]s needed to complete individual tasks of the services and share these estimates with [company]. [contractor] can begin to work on individual tasks after written approval by [company]. When [contractor] becomes aware that the [rateFrequency]s needed to perform a task will be higher than estimated, [contractor] will immediately make a new estimation that in turn needs written approval by [company]. When [contractor] completes all individual tasks of the services, [company] agrees to pay [contractor] [rateAmount] for every [rateFrequency] spent within the estimate approved by [company].", 
+						"unchecked" : "[company] agrees to pay [contractor] [rateAmount] per [rateFrequency] with a maximum compensation for [rateMaximum] [rateFrequency]s per [rateReset].", 
+						"description" : "Will [contractor] send estimates of the amount of work to be done?" },
+						
+					"rateAmount" : { 
+						"label" : "Rate amount + currency", 
+						"placeholder" : "80 USD", 
+						"description" : "The amount of money [contractor] will make per payment tick.",
+						"examples" : ["350 USD", "50 EUR"]},
+						
+					"rateFrequency" : { 
+						"label" : "Rate frequency", 
+						"placeholder" : "hour", 
+						"description" : "The time length of one payment tick for [contractor].",
+						"examples" : ["hour", "day", "month"]},
+						
+					"rateMaximum" : { 
+						"onlyDisplayIfUnchecked" : "rateStyle",
+						"label" : "Rate frequency maximum", 
+						"placeholder" : "20", 
+						"description" : "The maximum amount of [rateFrequency]'s [contractor] may perform.",
+						"examples" : ["10", "20"]},
+						
+					"rateReset" : { 
+						"onlyDisplayIfUnchecked" : "rateStyle",
+						"label" : "Rate frequency reset", 
+						"placeholder" : "week", 
+						"description" : "The frequency at which the rate frequency maximum resets.",
+						"examples" : ["day", "week", "quarter"]}
+				}
+			},
+			{ 
+				"text" : "<p>[receivePaymentOnSigning][company] agrees to pay [contractor] for every completed milestone approved by [company]:</p>[milestonePaymentList]", 
+				"variables" : 
+				{
+					"receivePaymentOnSigning" : { 
+						"type" : "checkbox", 
+						"label" : "Include payment on signing.", 
+						"isChecked" : false, 
+						"checked" : "When [company] and [contractor] sign this agreement, [company] agrees to pay [contractor] [paymentOnSigning]. ", 
+						"unchecked" : null, 
+						"description" : "Will [contractor] receive a payment on signing this document?" },
+						
+					"paymentOnSigning" : { 
+						"onlyDisplayIfChecked" : "receivePaymentOnSigning",
+						"label" : "Payment on signing + currency", 
+						"placeholder" : "3,000 USD", 
+						"description" : "The amount of money [contractor] will receive on signing the agreement.",
+						"examples" : ["13,000 USD", "10.000 EUR"]},
+						
+					"milestonePaymentList" : { 
+						"type" : "list", 
+						"list" : [], 
+						"takeListLengthSectionID" : "scope",
+						"takeListLengthTemplateID" : 1,
+						"takeListLengthVariableID" : "milestoneList",
+						"takeListLengthWarning" : "Add milestones to the work and services section first!",
+						"label" : "Payment per milestone + currency", 
+						"placeholderItem" : "2,000 USD", 
+						"placeholderAdd" : "2,000 USD", 
+						"prefix" : "Payment for approved milestone ", 
+						"separator" : ": ", 
+						"description" : "The amount of money [contractor] will receive after a milestone was completed and approved by [company].",
+						"examples" : ["2,500 USD", "1.225 EUR"]}
+				}
+			},
+			{
+				"text" : "<p>[receivePaymentOnSigning]Starting [percentageStartDate], [companyEarnsBackExpenses][company] agrees to pay [contractor] for [grossIncomePercentage]% of [company]’s gross income for [projectName] once every [frequency], [percentageEndDate][limitTotalShare]. Gross income is defined as the money that [company] received from sales or other uses of [projectName] on [platforms]. [company] will share an overview of gross income with [contractor] when [contractor] wants to verify the payment amount.</p><p>For every [frequency], if the amount that [company] owes to [contractor] is less than [minimumPayment], it will add up to the amount of the next [frequency] and [company] will not pay this [frequency]. When [contractor] stops receiving a percentage of the gross income, [company] will pay any remaining amount owed to [contractor].</p> [receivePaymentOnDate]", 
+				"variables" : 
+				{
+					"receivePaymentOnSigning" : { 
+						"type" : "checkbox", 
+						"label" : "Include a payment on signing.", 
+						"isChecked" : false, 
+						"checked" : "When [company] and [contractor] sign this agreement, [company] agrees to pay [contractor] [paymentOnSigning][paymentOnSigningIsAdvance]. ", 
+						"unchecked" : null, 
+						"description" : "Will [contractor] receive a payment on signing this document?" },
+						
+					"paymentOnSigningIsAdvance" : { 
+						"onlyDisplayIfChecked" : "receivePaymentOnSigning",
+						"type" : "checkbox", 
+						"label" : "... as an advance.", 
+						"isChecked" : false, 
+						"checked" : " in advance for [contractor]'s share of gross income", 
+						"unchecked" : null, 
+						"description" : "Will the payment that [contractor] receives be an advance for [contractor]'s share of gross income?" },
+						
+					"paymentOnSigning" : { 
+						"onlyDisplayIfChecked" : "receivePaymentOnSigning",
+						"label" : "Payment on signing + currency", 
+						"placeholder" : "3,000 USD", 
+						"description" : "The amount of money [contractor] will receive on signing the agreement.",
+						"examples" : ["13,000 USD", "10.000 EUR"]},
+					
+					"percentageStartDate" : {
+						"label" : "Start date of gross income percentage share", 
+						"placeholder" : "from the release date of [projectName]", 
+						"description" : "When [contractor] starts receiving a percentage of gross income.",
+						"examples" : ["from the release date of [projectName]", "from the first release of [projectName] that includes [contractor]'s work", "today", "January 18, 2020"]},
+					
+					"companyEarnsBackExpenses" : {
+						"type" : "checkbox", 
+						"label" : "[company] earns back specific expenses first.", 
+						"isChecked" : false, 
+						"checked" : "but after [company] has earned back [expensesBeforePercentage] (with a maximum total of [expensesMaximum]), ", 
+						"unchecked" : null, 
+						"description" : "Will [company] earn back expenses before sharing a percentage of gross income with [contractor]?"},
+						
+					"expensesBeforePercentage" : { 
+						"onlyDisplayIfChecked" : "companyEarnsBackExpenses",
+						"label" : "List of expenses before gross income percentage", 
+						"placeholder" : "advances to [contractor], travel costs, and marketing expenses", 
+						"description" : "A list of expenses that [company] will earn back at 100% before sharing a percentage of gross income with [contractor]. You can also include any payments that [contractor] already received.",
+						"examples" : ["administration costs, marketing expenses", "travel costs"]},
+						
+					"expensesMaximum" : { 
+						"onlyDisplayIfChecked" : "companyEarnsBackExpenses",
+						"label" : "Maximum total of expenses + currency", 
+						"placeholder" : "25,000 USD", 
+						"description" : "The maximum amount of money [company] will earn back before sharing a percentage of gross income with [contractor].",
+						"examples" : ["13,000 USD", "10.000 EUR"]},
+						
+					"grossIncomePercentage" : { 
+						"label" : "Percentage of gross income for [contractor]", 
+						"placeholder" : "10", 
+						"description" : "The percentage of gross income that [contractor] will receive.",
+						"examples" : ["15", "25"]},
+						
+					"limitTotalShare" : { 
+						"type" : "checkbox", 
+						"label" : "Limit total earnings from gross income percentage.", 
+						"isChecked" : false, 
+						"checked" : ", or until [contractor] has earned a total maximum of [earningsLimit]", 
+						"unchecked" : null, 
+						"description" : "Do you want to limit the total amount of money that [contractor] can make with this agreement?"},
+					"earningsLimit" : { 
+						"onlyDisplayIfChecked" : "limitTotalShare",
+						"label" : "Maximum total earnings from gross income percentage", 
+						"placeholder" : "50,000 USD", 
+						"description" : "The total amount of money [contractor] can earn from the gross income percentage.",
+						"examples" : ["50,000 USD", "200.000 EUR"]},
+						
+					"frequency" : { 
+						"label" : "Frequency of payment", 
+						"placeholder" : "month", 
+						"description" : "The frequency of invoicing by [contractor].",
+						"examples" : ["month", "two months", "half a year"]},
+						
+					"percentageEndDate" : {
+						"label" : "End date of gross income percentage", 
+						"placeholder" : "for as long as the game is for sale", 
+						"description" : "The date until [contractor] receives a percentage of gross income.",
+						"examples" : ["for as long as the game is for sale", "until one year after release date of the game", "for a year after the last release [contractor] worked on", "until February 30th, 2025"]},
+						
+					"platforms" : { 
+						"label" : "Platforms for gross income percentage", 
+						"placeholder" : "all platforms on which the game is sold", 
+						"description" : "A list of hardware and / or software distribution platforms (sales channels) from which [contractor] will earn a percentage of gross income. It is common for a contractor to receive a percentage of gross income for all platforms on which the game is sold.",
+						"examples" : ["all platforms on which the game is sold", "Steam, iOS App Store, and Google Play Store"]},
+						
+					"minimumPayment" : { 
+						"label" : "Minimum payout amount + currency", 
+						"placeholder" : "3,000 USD", 
+						"description" : "The minimum amount of money that [company] needs to owe [contractor] before [company] pays [contractor]. If the amount that [company] owes [contractor] is less than this minimum, the amount is added to the next payment term, where this rule will apply again and again, until the end date.",
+						"examples" : ["500 USD", "100 EUR"]},
+						
+					"receivePaymentOnDate" : { 
+						"type" : "checkbox", 
+						"label" : "Include additional payment on release or other date.", 
+						"isChecked" : false, 
+						"checked" : "<p>In addition to receiving a percentage of gross income, [company] agrees to pay [contractor] [paymentAmount] on [paymentDate].</p>",
+						"unchecked" : null, 
+						"description" : "Will [contractor] receive an additional payment on the release of the game, or on another date?" },
+						
+					"paymentAmount" : { 
+						"onlyDisplayIfChecked" : "receivePaymentOnDate",
+						"label" : "Additional payment amount + currency", 
+						"placeholder" : "3,000 USD", 
+						"description" : "The amount of money [contractor] will receive on the payment date.",
+						"examples" : ["13,000 USD", "10.000 EUR"]},
+						
+					"paymentDate" : {
+						"onlyDisplayIfChecked" : "receivePaymentOnDate",
+						"label" : "Additional payment date", 
+						"placeholder" : "the release date of the game", 
+						"description" : "The date [contractor] will receive the additional payment.",
+						"examples" : ["the release date of the game", "November 15th, 2025"]}
+				}
+			}
+		]
+	},
+	"compensationInvoicing" : {
+		"template": 
+		[
+			{ 
+				"text" : "<p>All amounts in this agreement are excluding VAT (value added tax). [contractorSendsInvoices] [companyCoversExpenses] expenses made while performing the services under this agreement. Because [contractor] is not an employee of [company], [contractor] is not entitled to worker's compensation, retirement, insurance or other benefits afforded to employees of [company].</p>", 
+				"variables" : 
+				{
+					"contractorSendsInvoices" : { 
+						"type" : "checkbox", 
+						"label" : "[contractor] sends invoices to receive payments.", 
+						"isChecked" : true, 
+						"checked" : "[contractor] will send invoices to receive payment(s) from [company], after which [company] will make payment [paymentMethod] within 30 days of receiving an invoice.", 
+						"unchecked" : "[company] will make payment [paymentMethod] within 30 days from the day [company] owes [contractor] the payment.", 
+						"description" : "Will [contractor] send an invoice to receive payment from [company]? It is often useful to have the [contractor] send invoices for their payments so that [company] doesn't have to do any additional tax administration."},
+						
+					"paymentMethod" : { 
+						"label" : "Payment method", 
+						"placeholder" : "by bank transfer", 
+						"description" : "How [company] will transfer the money to [contractor].",
+						"examples" : ["by wire or bank transfer", "through TransferWise", "by cheque"]},
+						
+					"companyCoversExpenses" : { 
+						"type" : "checkbox", 
+						"label" : "Some expenses are covered by [company].", 
+						"isChecked" : false, 
+						"checked" : "[company] agrees to cover [expensesCoveredByCompany] for [contractor] if [contractor] notifies and receives written approval from [company] before making the expense. [contractor] will be responsible for all other", 
+						"unchecked" : "[contractor] will be responsible for all", 
+						"description" : "Will [company] cover specific expenses that [contractor] needs to make in order to perform his services?"},
+						
+					"expensesCoveredByCompany" : { 
+						"onlyDisplayIfChecked" : "companyCoversExpenses",
+						"label" : "Expenses covered by [company]", 
+						"placeholder" : "software and travelling expenses", 
+						"description" : "A list of expenses covered by [company].",
+						"examples" : ["all software, hardware, and travelling expenses", "50% of expenses related to GDC"]}
+				}
+			}
+		]
+	},
+	
+	
+	
+	
+	
+	
+	"ip" : {
+		"header": "Rights to the work",
+		"select" : 
+		{
+			"label" : "What happens to the rights of the work?",
+			"description" : "For games and other creative projects, intellectual property (IP) rights protect everything tangible created by people, from visuals to code to music to videos, but not design concepts. IP is automatically owned by its maker. [contractor] and [company] can use this agreement to give [company] the right to use [contractor]'s IP ([company] gets most rights), or to transfer the IP from [contractor] to [company] ([company] gets all rights).",
+			"options": 
+			[
+				"[company] can use [contractor]'s work",
+				"Only [company] can use [contractor]'s work",
+				"[company] will own [contractor]'s work"
+			]
+		},
+		"template" : 
+		[
+			{
+				"text" : "<p>[contractor] will remain owner of the rights to the work resulting from the services for this agreement, but gives [company] the rights to use and distribute the work as part of [projectName] [scopeOfRights]. These rights include all art, images, designs, audio, videos, code, typography, and text, as they are delivered to [company], but [company] can make minor changes to the work if needed. The rights [contractor] gives to [company] are non-exclusive, meaning that [contractor] still has the rights to use the work for projects other than [projectName] without permission from [company]. [company] may not use the work that [contractor] delivers to [company] in projects other than [projectName] without written permission from [contractor]. If [projectName] is made for another company or if [projectName] is distributed through another company, publisher, or platform, [company] can give that company the same rights to use and distribute the work as part of [projectName].</p>",
+				"variables" : 
+				{
+					"scopeOfRights" : {
+						"label" : "Scope of the given rights", 
+						"placeholder" : "worldwide, indefinitely, for every distribution platform", 
+						"description" : "Where, for how long, and for what platforms [company] may use the work that [contractor] delivers to [company] under this agreement.",
+						"examples" : ["worldwide, indefinitely, on every distribution platform", "worldwide, for two years after first launch, on the Apple iOS App Store"]}
+				}
+			},
+			{
+				"text" : "<p>[contractor] will remain owner of the rights to the work resulting from the services for this agreement, but gives [company] the rights to use and distribute the work as part of [projectName] [scopeOfRights]. These rights include all art, images, designs, audio, videos, code, typography, and text, as they are delivered to [company], but [company] can make minor changes to the work if needed. [rightsHaveException] rights [contractor] gives to [company] are exclusive, meaning that [company] has the rights to use and distribute the work, and [contractor] or other companies that [contractor] works for do not. [company] may not use the work that [contractor] delivers to [company] in projects other than [projectName] without written permission from [contractor]. If [projectName] is made for another company or if [projectName] is distributed through another company, publisher, or platform, [company] can give that company the same rights to use and distribute the work as part of [projectName].</p>",
+				"variables" : 
+				{
+					"scopeOfRights" : {
+						"label" : "Scope of the given rights", 
+						"placeholder" : "worldwide, indefinitely, for every distribution platform", 
+						"description" : "Where, for how long, and for what platforms [company] may use the work that [contractor] delivers to [company] under this agreement.",
+						"examples" : ["worldwide, indefinitely, on every distribution platform", "worldwide, for two years after first launch, on the Apple iOS App Store"]},
+					
+					"rightsHaveException" : {
+						"type" : "checkbox", 
+						"label" : "Parts of the work are non-exclusive.", 
+						"isChecked" : false, 
+						"checked" : "With the exception of [exceptions], the", 
+						"unchecked" : "The", 
+						"description" : "Does [contractor] want to be able to use parts of the work [contractor] creates under this agreement for projects other than [projectName]?"},
+					
+					"exceptions" : {
+						"onlyDisplayIfChecked" : "rightsHaveException",
+						"label" : "Work that [contractor] can still use elsewhere", 
+						"placeholder" : "game engine code", 
+						"description" : "A list of the work [company] doesn't get exclusive rights for so that [contractor] can still use and distribute that work in other projects.",
+						"examples" : ["game engine code", "sound effects", "fonts"]}
+				}
+			},
+			{
+				"text" : "<p>[someAssetsAreLicensed]. If the law applicable to this agreement does not allow for the transfer of rights to the work, then [contractor] gives [company] the exclusive worldwide right to use the work, not limited in time and for every distribution platform. Without permission from [contractor] and without paying additional compensation to [contractor], [company] can distribute the work, make changes to the work, base other works on it, give and transfer rights to others, all as part of [projectName] or as part of something else.</p>",
+				"variables" : 
+				{
+					"someAssetsAreLicensed" : { 
+						"type" : "checkbox", 
+						"label" : "Parts of the work will still be owned by [contractor].", 
+						"isChecked" : false, 
+						"checked" : "[contractor] gives [company] the non-exclusive rights to use and distribute [licensedAssets] as part of [projectName], to which [company] can make minor changes if needed. For all other work resulting from the services, including art, images, designs, audio, videos, code, typography, and text, [contractor] fully transfers all rights to [company]", 
+						"unchecked" : "[contractor] fully transfers all rights to the work resulting from the services to [company], including art, images, designs, audio, videos, code, typography, and text", 
+						"description" : "Tick this checkbox if [contractor] wants to keep using certain assets not made specifically for [projectName], for instance: an existing codebase or assets used in multiple projects."},
+						
+					"licensedAssets" : { 
+						"onlyDisplayIfChecked" : "someAssetsAreLicensed",
+						"label" : "List of work still owned by [contractor]", 
+						"placeholder" : "game engine code", 
+						"description" : "A list of the work that [contractor] will still own, for which [company] will 'only' have the right to use and distribute as part of [projectName].",
+						"examples" : ["game engine code", "sound effects", "fonts"]}
+				}
+			}
+		]
+	},
+	"ip2" : {
+		"template": 
+		[
+			{ 
+				"text" : "<p>[contractor] will make sure that [company] can make full use of the work, which means that [contractor] will only deliver work that [contractor] made, or work from others if it comes with a license that allows the work to be included in [projectName]. If [contractor] delivers work to [company] that is claimed to infringe the rights of others, then [contractor] will defend [company] against these claims, and [contractor] is responsible for all damages [company] may suffer.</p><p>[company] agrees to credit [contractor] in- and outside of [projectName] following the industry standard. [contractor] can showcase the work resulting from the services for [contractor]'s portfolio, but if [projectName] is still unreleased, [contractor] needs written permission from [company].</p>", 
+				"variables" : 
+				{
+					
+				}
+			}
+		]
+	},
+	
+	
+	
+	
+	"confidentiality" : {
+		"header" : "Confidential information",
+		"template": 
+		[
+			{ 
+				"text" : "<p>[contractor] agrees not to disclose or use any confidential information of [company] or [projectName] without [company]'s written permission, both during and after the term of this agreement. Confidential information is defined as information that [company] has not made public.</p>", 
+				"variables" : 
+				{
+					
+				}
+			}
+		]
+	},
+	
+	
+	
+	
+	"disagreement" : {
+		"header": "In case of a disagreement",
+		"template" : 
+		[
+			{
+				"text" : "<p>Both [company] and [contractor] cannot end the agreement without a good reason. In case of a disagreement, [company] and [contractor] will do their best to respectfully resolve the disagreement. If [company] and [contractor] cannot find a solution for their disagreement, and [company] or [contractor] wants to end the agreement, they need to give a seven day deadline to get to a solution.</p><p>If [company] and [contractor] did their best to resolve the disagreement during these seven days but could not come to a solution, this agreement can be ended, and any rights that [company] already paid for before the disagreement stay with [company]. [company] and [contractor] can come to an additional agreement about rights that [company] has not yet paid for.</p><p>In case of a lasting conflict and [company] and [contractor] want to use arbitration or go to court, they can only do that in [jurisdiction] using the laws of [jurisdiction].</p>",
+				"variables": 
+				{
+					"jurisdiction" : { 
+						"label" : "Country or state of law and courts", 
+						"placeholder" : "Massachusetts, USA", 
+						"description" : "Choose here what country's or state's laws apply to the agreement, and what courts and arbitrators are allowed to rule if there is a conflict over this agreement. It is important to define this so that in a worst case scenario, this agreement can't be disputed in multiple places.",
+						"examples" : ["Massachusetts, USA", "The Netherlands"]}
+				}
+			}
+		]
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	"signatures" : {
+		"header" : "Signatures",
+		"avoidPageBreak" : true,
+		"template": 
+		[
+			{ 
+				"text" : "<p>[company] and [contractor] have both signed every page of this agreement, and each have their own copy of the signed agreement for future reference. This agreement starts on the latest date that [company] or [contractor] signs.</p><table style='width: 100%; border: 0;'><tr><td style='width: 50%;'>[companyLegal]</td><td style='width: 50%;'>[contractorLegal]</td></tr><tr><td>Name and title:<br><br><br></td><td>Name and title:<br><br><br></td></tr><tr><td>Signature:<br><br><br><br></td><td>Signature:<br><br><br><br></td></tr><tr><td>Date:<br><br></td><td>Date:<br><br></td></tr></table>", 
+				"variables" : 
+				{
+					
+				}
+			}
+		]
+	}
+}

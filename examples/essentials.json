@@ -1,0 +1,75 @@
+{
+	"contractInfo" : {
+		"version" : 0.1,
+		"lastModification" : "16 June 2015"
+	},
+	
+	
+	
+	
+	
+	"agreement" : {
+		"header": "Agreement",
+		"template" : 
+		[
+			{
+				"text" : "<p>Mandatory first section with section ID being 'agreement'. Header can be different.</p>",
+				"variables": 
+				{
+					
+				}
+			}
+		]
+	},
+	
+	
+	"sectionName" : {
+		"header": "[#] Header title",
+		"select" : 
+		{
+			"label" : "Selection label",
+			"description" : "Selection description",
+			"options": 
+			[
+				"option 1",
+				"option 2"
+			]
+		},
+		"template" : 
+		[
+			{
+				"text" : "<p>[#.#] Text from template. [simpleLabel].</p>",
+				"variables" : 
+				{
+					"simpleLabel" : {
+						"label" : "Simple label", 
+						"placeholder" : "label placeholder", 
+						"description" : "label description",
+						"examples" : ["label example 1", "label example 2"]}
+				}
+			},
+			{
+				"text" : "<p>Option 2.</p>",
+				"variables" : 
+				{
+				
+				}
+			}
+		]
+	},
+	
+	"signatures" : {
+		"header" : "[#] Signatures",
+		"avoidPageBreak" : true,
+		"template": 
+		[
+			{ 
+				"text" : "<p>[company] and [contractor] have both signed every page of this agreement, and each have their own copy of the signed agreement for future reference. This agreement starts on the latest date that [company] or [contractor] signs.</p><table style='width: 100%; border: 0;'><tr><td style='width: 50%;'>[companyLegal]</td><td style='width: 50%;'>[contractorLegal]</td></tr><tr><td>Name and title:<br><br><br></td><td>Name and title:<br><br><br></td></tr><tr><td>Signature:<br><br><br><br></td><td>Signature:<br><br><br><br></td></tr><tr><td>Date:<br><br></td><td>Date:<br><br></td></tr></table>", 
+				"variables" : 
+				{
+					
+				}
+			}
+		]
+	}
+}
