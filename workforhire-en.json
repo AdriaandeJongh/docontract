@@ -556,13 +556,13 @@
 		"template" : 
 		[
 			{
-				"text" : "<p>Both [company] and [contractor] cannot end the agreement without a good reason. In case of a disagreement, [company] and [contractor] will do their best to respectfully resolve the disagreement. If [company] and [contractor] cannot find a solution for their disagreement, and [company] or [contractor] wants to end the agreement, they need to give a seven day deadline to get to a solution.</p><p>If [company] and [contractor] did their best to resolve the disagreement during these seven days but could not come to a solution, this agreement can be ended, and any rights that [company] already paid for before the disagreement stay with [company]. [company] and [contractor] can come to an additional agreement about rights that [company] has not yet paid for.</p><p>In case of a lasting conflict and [company] and [contractor] want to use arbitration or go to court, they can only do that in [jurisdiction] using the laws of [jurisdiction].</p>",
+				"text" : "<p>Both [company] and [contractor] cannot end the agreement without a good reason. In case of a disagreement, [company] and [contractor] will do their best to respectfully resolve the disagreement. If [company] and [contractor] cannot find a solution for their disagreement, and [company] or [contractor] wants to end the agreement, they need to give a seven day deadline to get to a solution.</p><p>If [company] and [contractor] did their best to resolve the disagreement during these seven days but could not come to a solution, this agreement can be ended, and any rights that [company] already paid for before the disagreement stay with [company]. [company] and [contractor] can come to an additional agreement about rights that [company] has not yet paid for.</p><p>In case of a lasting conflict and [company] and [contractor] want to go to court, they can only do that in [jurisdiction] using the laws of [jurisdiction].</p>",
 				"variables": 
 				{
 					"jurisdiction" : { 
 						"label" : "Country or state of law and courts", 
 						"placeholder" : "Massachusetts, USA", 
-						"description" : "Choose here what country's or state's laws apply to the agreement, and what courts and arbitrators are allowed to rule if there is a conflict over this agreement. It is important to define this so that in a worst case scenario, this agreement can't be disputed in multiple places.",
+						"description" : "Choose here what country's or state's laws apply to the agreement, and what courts are allowed to rule if there is a conflict over this agreement. It is important to define this so that in a worst case scenario, this agreement can't be disputed in multiple places.",
 						"examples" : ["Massachusetts, USA", "The Netherlands"]}
 				}
 			}
