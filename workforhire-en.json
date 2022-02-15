@@ -1,9 +1,9 @@
 {
 	"contractInfo" : {
 		"language" : "en",
-		"version" : 1.14,
-		"basedOnEnglishVersion" : 1.14,
-		"lastModification" : "Jan. 12, 2021"
+		"version" : 1.15,
+		"basedOnEnglishVersion" : 1.15,
+		"lastModification" : "Feb. 15, 2022"
 	},
 	
 	
@@ -403,7 +403,7 @@
 		"template": 
 		[
 			{ 
-				"text" : "<p>All amounts in this agreement are excluding VAT (value added tax). [contractorSendsInvoices] [companyCoversExpenses] expenses made while performing the services under this agreement. Because [contractor] is not an employee of [company], [contractor] is not entitled to worker's compensation, retirement, insurance or other benefits afforded to employees of [company].</p>", 
+				"text" : "<p>All amounts in this agreement exclude taxes such as VAT, GST, or any country's equivalent. [contractorSendsInvoices] [companyCoversExpenses] expenses made while performing the services under this agreement. Because [contractor] is not an employee of [company], [contractor] is not entitled to worker's compensation, retirement, insurance or other benefits afforded to employees of [company].</p>", 
 				"variables" : 
 				{
 					"contractorSendsInvoices" : { 
