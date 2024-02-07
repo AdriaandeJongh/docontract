@@ -1,9 +1,9 @@
 {
 	"contractInfo" : {
 		"language" : "en",
-		"version" : 1.15,
-		"basedOnEnglishVersion" : 1.15,
-		"lastModification" : "Feb. 15, 2022"
+		"version" : 1.16,
+		"basedOnEnglishVersion" : 1.16,
+		"lastModification" : "Feb. 7, 2024"
 	},
 	
 	
@@ -497,7 +497,7 @@
 				}
 			},
 			{
-				"text" : "<p>[someAssetsAreLicensed]. If the law applicable to this agreement does not allow for the transfer of rights to the work, then [contractor] gives [company] the exclusive worldwide right to use the work, not limited in time and for every distribution platform. Without permission from [contractor] and without paying additional compensation to [contractor], [company] can distribute the work, make changes to the work, base other works on it, give and transfer rights to others, all as part of [projectName] or as part of something else.</p>",
+				"text" : "<p>[someAssetsAreLicensed]. If the law applicable to this agreement does not allow for the unlimited transfer of rights to the work, then [contractor] gives [company] the exclusive worldwide right to use the work, not limited in time and for every distribution platform. Without permission from [contractor] and without paying additional compensation to [contractor], [company] can distribute the work, make changes to the work, base other works on it, give and transfer rights to others, all as part of [projectName] or as part of something else.</p>",
 				"variables" : 
 				{
 					"someAssetsAreLicensed" : { 
